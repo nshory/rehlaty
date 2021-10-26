@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+ <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Demo styles -->
+ <link rel="stylesheet" href="{% static 'css/swp.css' %}">
+  </head>
+
+  <body>
+          <!-- Swiper start ============= -->
+        <!-- Swiper -->
+
+        <div class="box_xx" >
+            <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+              {% for x in tt %}
+            <div class="swiper-slide">
+
+                      <div class="gsm-box" onclick="location.href='{% url  'list:sub_1' x.title %}';">
+            <div class="icon"><img src={{x.icon.url}} loading="lazy" alt="" class="image-2"></div>
+            <div class="icontext">
+              <div class="text-block-8">{{x.title}} </div>
+            </div>
+          </div>
+            </div>
+                  {%endfor%}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="{% static 'js/swp.js' %}" ></script>
+        <!-- Initialize Swiper -->
+          <!-- Swiper end ============== -->
+              </div>
+  <div class="b7r-section-a8sam wf-section">
+<!--    <div class="genral-gsm">-->
+<!--      <div class="h1-br" >-->
+<!--        <h1 class="heading-4">بحري</h1><img src="{% static 'images/wave.svg' %}" loading="lazy" alt="" class="image-3">-->
+<!--      </div>-->
+<!--      <div class="h1-br">-->
+<!--        <h1 class="heading-4">بري</h1><img src="{% static 'images/beach-chair.svg' %}" loading="lazy" alt="" class="image-3">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="parter"></div>-->
+<!--    <div class="a8sam-boxes">-->
+
+
+    <div   onclick="location.href='{% url 'list:create_ad'%}';" style="cursor: pointer;"  class="add-your-ad">
+      <div class="addd-text">   اضف اعلانك  </div>  <i class="far fa-plus-square"></i>
+    </div>
+
+  </div>
+
+      	{% for x in ad%}
+        <div class="add-container">
+            <div  class="addbox" onclick="location.href='{% url 'list:details' x.id %}';" style="cursor: pointer;" >
+      <div class="pic"><img src="" loading="lazy" width="270" sizes="(max-width: 479px) 98vw, (max-width: 767px) 166.203125px, 209.40625px" srcset="{{x.image.url}}" alt="" class="image"></div>
+      <div class="add-detail">
+        <div class="box-sec1">
+         <div class="ad_name" >  {{x.title}} </div>
+
+        </div>
+        <div class="box-sec2">
+          <div class="jeddah-text">{{x.city}} </div>
+<!--          <div class="ratting">ratting</div>-->
+        </div>
+        <div class="box-sec3">
+          <div class="text-block-7">{{x.username}}</div>
+          <div class="add-box-pricebox">
+            <div class="addbox-price"> {{x.price}} </div>
+            <div class="text-block-6"> ريال</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+        </div>
+
+
+        {%endfor%}
+  </div>
+{% endblock body %}

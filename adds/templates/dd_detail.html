@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+{% load humanize %}
+<html>
+
+<p> </p>
+<p></p>
+<p></p>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/lightbox.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {{ad_details.title}}</title>
+        <link rel="stylesheet" href="{% static 'css/ad_details.css' %}">
+</head>
+<body>
+
+    <div class="container">
+       <div class="add-nav-bar">
+            <nav aria-label="breadcrumb">
+  <ol class="breadcrumb tapp-flex">
+      <li class="breadcrumb-item"><a >  القسم :      {{ad_details.a8sam}}         </a></li>
+      <li class="breadcrumb-item"><a >  رقم الأعلان :      #{{ad_details.id}}        </a></li>
+
+  </ol>
+</nav>
+    </div>
+        <div class="ad-main-box">
+
+            <div class="box-header">
+                <div class="ad-name-div">
+
+                    <div class="ad-name"> {{ad_details.title}}</div>
+                </div>
+                <div class="rating-username-div">
+                    <div class="username">  {{ad_details.username }} <i class="fas fa-user"></i></div>
+                    <div class="head-left-city-date">
+                          <div class="rating"> {{ad_details.city}}  <i class="fas fa-map-marker-alt"></i> </div>
+                    <div class="rating"> {{ad_details.updated_at|naturaltime}}  <i class="fas fa-map-marker-alt"></i> </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="box-contains">
+                <div class="add-context">
+
+                   {{ad_details.description}}
+                                   </div>
+
+            </div>
+             <div class="phone-number phonenamber-hide1 ">    {{ad_details.phone}}     <i class="fas fa-phone"></i>  </div>
+            <div class="box-footer">
+                <div class="footer-box box1" >
+                    <div class="box-lable"> <i class="fas fa-heart"></i> مفضلة </div>
+            </div>
+                <div class="footer-box phonenamber-hide">
+                    <div class="box-lable">                 <div class="phone-number"> {{ad_details.phone}} </div> </div>
+                     </div>
+                <div class="footer-box">
+                    <div class="box-lable"><i class="fas fa-map-marked-alt"></i>الموقع </div>
+
+                </div>
+                <div class="footer-box box4">
+                    <div class="add-price"> السعر :  {{ad_details.price}} </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="ender-boxes">
+            <div class="box">      واتساب  <div class="icon1">  <i class="fab fa-whatsapp"></i> </div>  </div>
+            <div class="box">      اتصال  <div class="icon1">   <i class="fas fa-phone"></i> </div>  </div>
+            <div class="box">      مشاركة  <div class="icon1"> <i class="fas fa-share"></i> </div>  </div>
+            <div class="box">      شكوى  <div class="icon1">  <i class="fas fa-flag"></i> </div>  </div>
+
+
+
+
+
+ <div class="photo-gallery">
+        <div class="container">
+            <div class="intro">
+                           </div>
+            <div class="row photos">
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ad_details.image.url}}" data-lightbox="photos"><img class="img-fluid" src="{{ad_details.image.url}}"></a></div>
+               {%if ad_details.img1 %}
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ad_details.img1.url}}" data-lightbox="photos"><img class="img-fluid" src="{{ad_details.img1.url}}"></a></div>
+                {%endif%}
+
+                   {%if ad_details.img2 %}
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ad_details.img2.url}}" data-lightbox="photos"><img class="img-fluid" src="{{ad_details.img2.url}}"></a></div>
+                {%endif%}
+
+                   {%if ad_details.img3 %}
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ad_details.img3.url}}" data-lightbox="photos"><img class="img-fluid" src="{{ad_details.img3.url}}"></a></div>
+                {%endif%}
+
+                   {%if ad_details.img4 %}
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ad_details.img4.url}}" data-lightbox="photos"><img class="img-fluid" src="{{ad_details.img4.url}}"></a></div>
+                {%endif%}
+
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+
+</body>
+</html>
+
+{% endblock body %}

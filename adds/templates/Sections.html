@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+ <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Demo styles -->
+ <link rel="stylesheet" href="{% static 'css/swp.css' %}">
+  </head>
+<div class="nn-con">
+<div class="con sec-box-page" >
+{% for x in tt %}
+            <div class="gsm-box" onclick="location.href='{% url  'list:sub_1' x.title %}';">
+            <div class="icon"><img src={{x.icon.url}} loading="lazy" alt="" class="image-2"></div>
+            <div class="icontext">
+            <div class="text-block-8">{{x.title}} </div>
+            </div>
+            </div>
+{%endfor%}
+
+
+  </div>
+</div>
+{% endblock body %}

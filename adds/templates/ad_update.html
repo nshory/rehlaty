@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+
+
+        <link rel="stylesheet" href="{%  static 'css/create_add.css' %}">
+      <div class="container">
+
+        <form action="" method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+
+
+
+        <div class="Text-box" style="">
+          <div class="sub-header">
+            <p>تعديل الاعلان <i class="fas fa-plus"></i> </p>
+          </div>
+          <div class="text-title">    <p>عنوان الاعلان </p>  <i class="fas fa-angle-left"> </i>  </div>
+
+
+             <input  required="" style="direction: rtl;" type="text" class="form-control" name="title" id="id_title" placeholder="اكتب عنوان الاعلان">
+
+
+          <div class="text-title">  <p>وصف الاعلان </p>  <i class="fas fa-align-justify"></i></div>
+
+
+            <div class="input-group">
+
+        <textarea required=""  style="direction: rtl;" name="description" id="id_description"class="form-control" aria-label="With textarea"></textarea>
+        </div>
+
+          <div class="black-line "></div>
+          <div class="text-title">  السعر      <i class="far fa-money-bill-alt"></i></div>
+          <div class="text-box2" dir="rtl" >
+                <div class="input-group mb-3">
+                  <span class="input-group-text">ريال</span>
+             <input type="text" name="price" maxlength="5" required="" id="id_price">
+             <span class="input-group-text">.00</span>
+                </div>
+            </div>
+            <!-- -------------------------->
+                    <div class="text-title">المدينة <i class="fas fa-map-marker-alt"></i></div>
+            <select  required="" name="city" required="" id="id_city" class="form-select" aria-label="Default select example">
+    <option></option>
+                <option style="" value="جدة">جدة </option>
+                <option style="" value="الرياض">الرياض </option>
+            </select>
+            <!-- -------------------------->
+                  <!-- -------------------------->
+                    <div class="text-title">القسم <i class="fas fa-map-marker-alt"></i></div>
+            <select  required="" name="cate" required="" id="id_cate" class="form-select" aria-label="Default select example">
+                 <option></option>
+                <option value="شاليهات">شاليهات</option>
+                <option value="مخيمات">مخيمات</option>
+                <option value="قوارب صيد">قوارب صيد</option>
+                <option value="قوارب نزهة">قوارب نزهة</option>
+            </select>
+
+            <!-- -------------------------->
+
+
+            <div class="text-title">رقم التواصل <i class="fas fa-phone"></i> </div>
+            <div class="text-box2" dir="rtl" >
+            <div class="input-group mb-3">
+
+              <input  required="" name="phone"  maxlength="10" minlength="10" id="id_phone" type="text" class="form-control" aria-label="ادخل رقم الجوال ">
+             <span class="input-group-text">+966</span>
+                </div>
+
+
+
+
+            </div>
+
+          <div class="black-line "></div>
+
+          <div class="text-title">رفع الصور   </div>
+
+          <div class="text-title"> صورة الغلاف   </div>
+                <div class="input-group mb-3 drtl" style="direction: rtl;" >
+                 <input  required="" type="file" class="form-control" name="image" id="id_image" >
+                 </div>
+               <div class="text-title"> صور اخرى </div>
+                <div class="input-group mb-3 drtl" style="direction: rtl;" >
+                 <input title="dd" type="file" class="form-control"name="img1" id="id_img1" >
+                 </div>
+              <div class="input-group mb-3 drtl" style="direction: rtl;" >
+                 <input title="dd" type="file" class="form-control" name="img2" id="id_img2" >
+                 </div>
+              <div class="input-group mb-3 drtl" style="direction: rtl;" >
+                 <input title="dd" type="file" class="form-control"name="img3"  id="id_img3" >
+                 </div>
+              <div class="input-group mb-3 drtl" style="direction: rtl;" >
+                 <input title="dd" type="file" class="form-control" name="img4" id="id_img4" >
+                 </div>
+
+
+
+
+          <input class="sub-btn" value="تعديل " type="submit"></input>
+        </div>
+        </form>
+
+    </div>
+
+
+
+{% endblock body %}

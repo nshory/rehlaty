@@ -1,0 +1,33 @@
+i.fas.fa-address-card {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+i.fas.fa-ad {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+.rbox {
+
+    display: flex;
+    align-items: center;
+    margin-top : 20px
+
+}
+.account-info {
+    margin-top:15px
+
+}
+
+.textbox-h {
+ height: 38px;
+
+}
+.add_op {
+   display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+    margin: 10px;
+}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link href="{% static 'css/myaccount.css' %}" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حسابي</title>
+</head>
+<body>
+<div class="container">
+
+          <div class="row">
+         <div class="col-sm d-flex justify-content-center  " onclick="location.href='{% url 'accounts:myaccount'%}';" >
+             <button type="button" class="btn btn-light rbox"><i class="fas fa-address-card"></i>   معلومات الحساب   </button>
+
+         </div>
+           <div class="col-sm d-flex justify-content-center  " onclick="location.href='{% url 'accounts:myadds'%}';" style="cursor: pointer;"  >
+             <button type="button" class="btn btn-light rbox"><i class="fas fa-ad"></i>  الإعلانات   </button>
+
+         </div>
+
+    <div  dir="rtl" class="account-info">
+          <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">@</span>
+          </div>
+          <input type="text" class="form-control" placeholder="{{request.user}}" aria-label="Username" aria-describedby="basic-addon1" disabled>
+         </div>
+    </div>
+
+    <div  dir="rtl" class="account-info">
+          <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text textbox-h" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+          </div>
+          <input type="email" class="form-control" placeholder="{{request.user.email}}" aria-label="email" aria-describedby="basic-addon1" disabled>
+         </div>
+
+    </div>
+    <div  dir="rtl" class="account-info">
+          <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text textbox-h" id="basic-addon1"> <i class="fas fa-lock"></i> </span>
+          </div>
+          <input type="password" class="form-control" aria-label="email" aria-describedby="basic-addon1" >
+         </div>
+
+    </div>
+
+</div>
+
+
+
+ </div>
+</body>
+</html>
+{% endblock body %}

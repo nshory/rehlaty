@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<html>
+
+<div id="add-box-list" class="add-box-list">
+	{% for x in ad %}
+	<div id="add-box" class="add_box">
+		<svg class="add-box-back">
+			<rect id="add-box-back" rx="33" ry="33" x="0" y="0" width="1022" height="201">
+			</rect>
+		</svg>
+		<div id="add-name">
+			<span>{{x.title}}</span>
+		</div>
+		<img id="add-pic" src="{{x.image.url}}">
+
+		<div id="add-cy">
+			<span>جدة</span>
+		</div>
+		<div id="ratting">
+			<span>7 / 10</span>
+		</div>
+		<div id="ratting-t">
+			<span>التقييم</span>
+		</div>
+		<div id="price">
+			<span> {{x.price}}  </span>
+		</div>
+		<div id="price-d">
+			<span>  ريال</span>
+		</div>
+	</div>
+		 {%endfor%}
+           </div>
+
+
+
+
+
+
+     <html/>
+{% endblock body %}
